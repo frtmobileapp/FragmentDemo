@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">FragmentDemo</string>
+    <string name="app_name">RecentConversationDemo</string>
+    <string name="z">dsdsdsdsdsdsdsdsdsa</string>
+    <string name="hello">Hello</string>
+    <string name="deputy">DeputyActivity</string>
+    <string name="et_input">请输入...</string>
+    <string name="txt_modify">修改</string>
 </resources>
