@@ -18,7 +18,7 @@ import com.nd.frt.fragmentdemo.service.UserInfoService;
 import java.util.List;
 
 public class ListFragment extends Fragment {
-    private ListFragment mAdapater;
+    private UserAdapter mAdapater;
 
     @Nullable
     @Override
@@ -32,17 +32,14 @@ public class ListFragment extends Fragment {
         View view = getView();
         assert view != null;
         RecyclerView recyclerView = view.findViewById(R.id.rvList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-
         UserInfoService userInfoService = new UserInfoService();
         List<UserInfo> userInfos = userInfoService.getUserInfos(getContext());
-
-        UserAdapter mAdapter = new UserAdapter(userInfos);
-        recyclerView.setAdapter(mAdapter);
+        mAdapater = new UserAdapter(userInfos);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(mAdapater);
     }
 
     public void edit(UserInfo userInfo, int index) {
         mAdapater.edit(userInfo, index);
-
     }
 }
